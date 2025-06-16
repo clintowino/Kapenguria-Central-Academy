@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+   <section class="sub-header" >
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li> <a href="index.html"> HOME</a></li>
+                <li> <a href="about.html"> ABOUT</a></li>
+                <li> <a href="course.html"> COURSE</a></li>
+                <li> <a href="blog.html"> BLOG</a></li>
+                <li> <a href="contact.html"> CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+        <h1>Our Courses</h1>
+   </section>
+
+                <!--------Our Courses-------->
+
+
+<section class="course">
+         <h1 style="margin-top: 90px;padding-bottom:50px;"> Courses we Offer</h1>
+        <p>At Kapenguria Central School, we are proud to offer a dual curriculum that caters to learners under both the Competency-Based Curriculum (CBC) and the 8-4-4 system.<br>
+             This allows us to accommodate students in line with the national education transition and provide a strong foundation for academic success and life skills development.
+        </p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>🔵 Subjects offered: </h3>
+                <p>
+                <ol>English</ol>
+                <ol>Kiswahili</ol>
+                <ol>Mathematics</ol>
+                <ol>Science</ol>
+                <ol>Social Studies</ol>
+                <ol>CRE</ol>
+                <ol>Life Skills</ol>
+                <ol>Creative Arts</ol>
+                <ol>Physical education</ol>
+                </p>
+            </div>
+       
+            <div class="course-col">
+                <h3>🟡Focus Areas:</h3>
+                <p> <ol>Academic performance</ol></p>
+                <p> <ol>National exam preparation (KCPE)</ol></p>
+                <p> <ol>Moral and spiritual growth</ol></p>
+                <p> <ol>Critical thinking and teamwork</ol></p>
+           
+                    
+                </p>
+            </div>
+                <div class="course-col">
+                <h3>🎯 Our Teaching Approach:</h3>
+                <p> ✅ Small class sizes for personalized learning</p>
+                <p> ✅ Blending traditional and modern teaching methods</p>
+                <p> ✅ Regular academic clinics and parent engagement</p>
+                <p> ✅ Integration of co-curricular activities for holistic growth</p>
+          
+        </div>
+   </section>
+
+   <script>
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = document.querySelector('.fa-bars');
+        const closeIcon = document.querySelector('.fa-times');
+        if(menuIcon && closeIcon && navLinks) {
+          menuIcon.onclick = () => navLinks.style.right = '0';
+          closeIcon.onclick = () => navLinks.style.right = '-200px';
+        }
+   </script>
+</body>
+</html>

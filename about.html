@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+   <section class="sub-header" >
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li> <a href="index.html"> HOME</a></li>
+                <li> <a href="about.html"> ABOUT</a></li>
+                <li> <a href="course.html"> COURSE</a></li>
+                <li> <a href="blog.html"> BLOG</a></li>
+                <li> <a href="contact.html"> CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+        <h1>About Us</h1>
+
+
+   </section>
+
+<!-----------About Us Content------>
+
+<section class="about-us">
+    <div class="row">
+        <div class="about-col">
+            <h1>One Of The Best private Schools in Kenya</h1>
+            <p>Kapenguria Central School offers a personalized and focused educational experience under Kenya’s 8-4-4 curriculum.<br> As a small private institution, we take pride in providing:<br><br>
+
+✅ Individual Attention: With only a few pupils per class, each learner receives dedicated support to thrive academically and socially.<br><br>
+
+🧑‍🏫 Qualified and Caring Teachers: Our team of professional educators is committed to holistic development — focusing not just on grades, but character too.<br><br>
+
+🏡 Safe & Friendly Environment: We believe in cultivating a safe, welcoming space where every child can grow confidently.<br><br>
+
+📈 Strong Values: Discipline, hard work, integrity, and responsibility are at the core of our mission.</p><br>
+            <a href="course.html" class="hero-btn red-btn">EXPLORE NOW</a>
+
+        </div>
+        <div class="about-col">
+            <img src="https://scontent.fnbo19-1.fna.fbcdn.net/v/t39.30808-6/474535136_122186735498177633_4679277176133351636_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=aojd8NYpuVkQ7kNvwH7dCx8&_nc_oc=AdlGyf6XTSVPGo1f2sZot9_XHhgXVZdeCStwPzgnimPVV2gsQNn4p9QnbS80NZ87Yxs&_nc_zt=23&_nc_ht=scontent.fnbo19-1.fna&_nc_gid=-plna12v20NCLPkUGYi2mw&oh=00_AfMSMFf5jDsUJ47yUGmID9LpBQ-sTnpxbIL6dDQrpDh3xw&oe=6855BD8A">
+
+        </div>
+    </div>
+    
+    </div>
+</section>
+
+<script>
+  const navLinks = document.getElementById('navLinks');
+  const menuIcon = document.querySelector('.fa-bars');
+  const closeIcon = document.querySelector('.fa-times');
+  if(menuIcon && closeIcon && navLinks) {
+    menuIcon.onclick = () => navLinks.style.right = '0';
+    closeIcon.onclick = () => navLinks.style.right = '-200px';
+  }
+</script>
+</body>
+</html>

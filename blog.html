@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    
+    <!-- Correct Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Your custom stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <section class="sub-header">
+        <nav>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>From the Desk of Kapenguria Central</h1>
+    </section>
+
+    <!-- Blog Page Content -->
+    <section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+                <h2>What Makes Our School Different</h2>
+                <p>🧑‍🏫 1. Personalized Learning Through Small Class Sizes
+With a deliberately small student population, every child gets the attention they deserve. Teachers are able to know each learner by name, understand their strengths and struggles, and tailor support accordingly. This leads to better academic outcomes and stronger emotional development.</p>
+                <br>
+                <p>📘 2. Dual Curriculum: CBC & 8-4-4
+We’re among the few schools in the region offering both the Competency-Based Curriculum (CBC) and the traditional 8-4-4 system. This ensures that:
+
+Learners under CBC grow through skills, creativity, and practical learning
+
+Upper primary students in 8-4-4 receive structured exam preparation for KCPE
+
+This flexibility helps us guide each child through Kenya’s evolving education landscape.</p>
+                <br>
+                <p>🌱 3. Strong Emphasis on Discipline and Values
+We believe true education shapes character. At Kapenguria Central, children are taught to value:
+
+Respect and responsibility
+
+Honesty and hard work
+
+Teamwork and leadership
+
+Our goal is to raise academically sound and morally upright citizens.</p>
+                <br>
+                <p>📍 4. Safe, Calm, and Supportive Environment
+Our school compound is clean, secure, and child-friendly. The learning atmosphere is calm and positive — giving learners a space where they feel safe, seen, and supported.</p>
+
+                <div class="comment-box">
+                    <h3>Leave a Comment</h3>
+                    <form class="comment-form">
+                        <input type="text" placeholder="Enter Name">
+                        <input type="email" placeholder="Enter Email">
+                        <textarea rows="5" placeholder="Your Comment"></textarea>
+                        <button type="submit" class="hero-btn red-btn">POST COMMENT</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="blog-right" >
+                <h3 style="font-size:35px;">School News & Updates</h3>
+                <div>
+                    <button>Opening/closing dates</button>
+                
+                </div>
+                <div>
+                    <button>Fee payment deadlines</button>
+                
+                </div>
+                <div>
+                    <button>KCPE and CBC assessment updates</button>
+                
+                </div>
+                <div>
+                    <button>How to Help Your Child With Homework</button>
+                
+                </div>
+                <div>
+                    <button>Understanding the CBC at Home</button>
+                
+                </div>
+                <div>
+                    <button>Healthy Snacks for School Lunch</button>
+                
+                </div>
+                <div>
+                    <button>Study tips for upper primary</button>
+                
+                </div>
+                <div>
+                    <button>Exam revision timetables</button>
+                
+                </div>
+               
+                
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = document.querySelector('.fa-bars');
+        const closeIcon = document.querySelector('.fa-times');
+        if(menuIcon && closeIcon && navLinks) {
+            menuIcon.onclick = () => navLinks.style.right = '0';
+            closeIcon.onclick = () => navLinks.style.right = '-200px';
+        }
+    </script>
+</body>
+</html>
