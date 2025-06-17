@@ -23,14 +23,15 @@
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
+<h1>Home</h1></section>
+    <section style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://scontent.fnbo19-1.fna.fbcdn.net/v/t39.30808-6/474535136_122186735498177633_4679277176133351636_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=aojd8NYpuVkQ7kNvwH7dCx8&_nc_oc=AdlGyf6XTSVPGo1f2sZot9_XHhgXVZdeCStwPzgnimPVV2gsQNn4p9QnbS80NZ87Yxs&_nc_zt=23&_nc_ht=scontent.fnbo19-1.fna&_nc_gid=UnbULOwoeH_F1g-mH1Sodw&oh=00_AfMW4Ts7kZc7E3VTd192Lpvjukrfimg9AabE_dM1wjXt-g&oe=6855F5CA);background-color:rgb(70, 68, 65);-webkit-backdrop-filter:blur(1px);backdrop-filter:blur(7px);background-blend-mode:overlay;">
     <div class="text-box">
-        <h1 style="font-size:58px;"> Kapenguria <br>
-            Central Academy</h1><br>
+        <h1 style="font-size:54px;"> Kapenguria Central Academy</h1><br>
         <h2 style="color: rgb(124, 247, 240);">🏫 Welcome to Kapenguria Central School<br></h2>
-        <h3>P.O.BOX 86,30600 -  KAPENGURIA</h3>
+        <h3>P.O.BOX 86,30600 - KAPENGURIA</h3>
 
         <p>
-            Kapenguria Central Academy day and boarding primary school <br>
+            Kapenguria Central Academy day and boarding primary school 
             was established in the year 2000 while our junior school was established in the year 2023.<br>
             The school offers quality and comprehensive education which follows the CBC system.<br><br>
         
@@ -86,7 +87,7 @@
               <!--------Campus----->
 
    <section class="campus">
-        <h1>Photo Gallery of Kapenguria central</h1>
+        <h1>Photo Gallery of Kapenguria Central</h1>
         <p>Our school is available for every person across all borders</p>
 
         <div class="row">
@@ -147,7 +148,7 @@
                <!-------------Testimonials----------->
    <section class="testimonials">
         <h1>What People Say</h1>
-        <p>Our students have different comments of their experiences</p>
+        <p>Different People Have Different Comments of their experiences</p>
         <div class="row">
             <div class="testimonial-col">
                 <img src="https://media.istockphoto.com/id/1365601848/photo/portrait-of-a-young-woman-carrying-her-schoolbooks-outside-at-college.jpg?s=612x612&w=0&k=20&c=EVxLUZsL0ueYFF1Nixit6hg-DkiV52ddGw_orw9BSJA=">
@@ -162,7 +163,7 @@
                 </div>
             </div>
             <div class="testimonial-col">
-                <img src="https://media.gettyimages.com/id/1438969575/photo/smiling-young-male-college-student-wearing-headphones-standing-in-a-classroom.jpg?s=612x612&w=gi&k=20&c=SpIONFFVzrC2OpgxeC2GEpUs0mDQxjw8xn9Z-gfGs5c=">
+                <img src="https://media.istockphoto.com/id/1653161331/photo/portrait-of-bearded-african-businessman-with-laptop.jpg?s=612x612&w=0&k=20&c=4z7GdxcEdfXQ8TwbLMMQxDQhZO9FKIBuBJt7ej5_gec=">
                 <div>
                     <p>🗣️ “I was looking for a school that blends values, discipline, and modern learning. Kapenguria Central ticks all the boxes. My son is more confident and focused.” </p>
                     <h3>Mr. Limo, Parent of Std. 7 student</h3>
@@ -180,7 +181,7 @@
          <!-------------Call To Action--------->
 
 <section class="cta">
-    <h1>✅ Enroll Today — Give Your Child a Strong Start</h1>
+    <h1>Enroll Today — Give Your Child a Strong Start</h1>
     <a href="contact.html" class="hero-btn">CONTACT US</a>
 
 </section>
@@ -192,8 +193,52 @@
   const menuIcon = document.querySelector('.fa-bars');
   const closeIcon = document.querySelector('.fa-times');
   if(menuIcon && closeIcon && navLinks) {
-    menuIcon.onclick = () => navLinks.style.right = '0';
-    closeIcon.onclick = () => navLinks.style.right = '-200px';
+    menuIcon.onclick = (e) => {
+      navLinks.style.right = '0';
+      navLinks.classList.add('active');
+      menuIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+      // Enable outside click to close
+      setTimeout(() => {
+        document.addEventListener('click', outsideMenuClick);
+      }, 0);
+    };
+    closeIcon.onclick = (e) => {
+      navLinks.style.right = '-200px';
+      navLinks.classList.remove('active');
+      menuIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+      document.removeEventListener('click', outsideMenuClick);
+    };
+    function outsideMenuClick(e) {
+      if (!navLinks.contains(e.target) && e.target !== menuIcon) {
+        navLinks.style.right = '-200px';
+        navLinks.classList.remove('active');
+        menuIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+        document.removeEventListener('click', outsideMenuClick);
+      }
+    }
+    // Initial state
+    if(window.innerWidth <= 700) {
+      closeIcon.style.display = 'none';
+      menuIcon.style.display = 'block';
+    }
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 700) {
+        closeIcon.style.display = 'none';
+        menuIcon.style.display = 'none';
+        navLinks.style.right = '';
+        navLinks.classList.remove('active');
+        document.removeEventListener('click', outsideMenuClick);
+      } else {
+        closeIcon.style.display = 'none';
+        menuIcon.style.display = 'block';
+        navLinks.style.right = '-200px';
+        navLinks.classList.remove('active');
+        document.removeEventListener('click', outsideMenuClick);
+      }
+    });
   }
 </script>
 </body>

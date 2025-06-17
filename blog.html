@@ -17,6 +17,8 @@
     <!-- Header Section -->
     <section class="sub-header">
         <nav>
+                    <a href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbtWqxtce2Jf1R86crjokCZauPnJiwCZoJ5Q&s"></a>
+
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
@@ -115,13 +117,41 @@ Our school compound is clean, secure, and child-friendly. The learning atmospher
 
     <!-- JavaScript -->
     <script>
-        const navLinks = document.getElementById('navLinks');
-        const menuIcon = document.querySelector('.fa-bars');
-        const closeIcon = document.querySelector('.fa-times');
-        if(menuIcon && closeIcon && navLinks) {
-            menuIcon.onclick = () => navLinks.style.right = '0';
-            closeIcon.onclick = () => navLinks.style.right = '-200px';
-        }
-    </script>
+  const navLinks = document.getElementById('navLinks');
+  const menuIcon = document.querySelector('.fa-bars');
+  const closeIcon = document.querySelector('.fa-times');
+  if(menuIcon && closeIcon && navLinks) {
+    menuIcon.onclick = () => {
+      navLinks.style.right = '0';
+      navLinks.classList.add('active');
+      menuIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+    };
+    closeIcon.onclick = () => {
+      navLinks.style.right = '-200px';
+      navLinks.classList.remove('active');
+      menuIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    };
+    // Initial state
+    if(window.innerWidth <= 700) {
+      closeIcon.style.display = 'none';
+      menuIcon.style.display = 'block';
+    }
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 700) {
+        closeIcon.style.display = 'none';
+        menuIcon.style.display = 'none';
+        navLinks.style.right = '';
+        navLinks.classList.remove('active');
+      } else {
+        closeIcon.style.display = 'none';
+        menuIcon.style.display = 'block';
+        navLinks.style.right = '-200px';
+        navLinks.classList.remove('active');
+      }
+    });
+  }
+</script>
 </body>
 </html>
